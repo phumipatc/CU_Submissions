@@ -7,16 +7,29 @@
 	Status	: 
 """
 a = input()
-b = ''
-for x in a:
-    if x == '(':
-        b = b+'['
-    elif x == '[':
-        b = b+'('
-    elif x == ')':
-        b = b+']'
-    elif x == ']':
-        b = b+')'
-    else:
-        b = b+x
-print(b)
+
+# sol 1
+# b = ''
+# for x in a:
+#     if x == '(':
+#         b = b+'['
+#     elif x == '[':
+#         b = b+'('
+#     elif x == ')':
+#         b = b+']'
+#     elif x == ']':
+#         b = b+')'
+#     else:
+#         b = b+x
+# print(b)
+
+# sol 2
+a = a.replace('(', '\a')
+a = a.replace('[', '(')
+a = a.replace('\a', '[')
+
+a = a.replace(')', '\a')
+a = a.replace(']', ')')
+a = a.replace('\a', ']')
+
+print(a)
