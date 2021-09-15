@@ -1,3 +1,4 @@
 {
-	"git.postCommitCommand": "push"
+	"git.postCommitCommand": "push",
+	"editor.detectIndentation": false
 }
