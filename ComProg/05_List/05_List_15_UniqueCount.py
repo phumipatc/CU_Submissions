@@ -6,6 +6,13 @@
 	Algo	: 
 	Status	: 
 """
+# Set Method
+# a = list(set([int(x) for x in input().split()]))
+
+# print(len(a),a[:10],sep='\n')
+
+
+# List Method
 a = [int(x) for x in input().split()]
 a.sort()
 
