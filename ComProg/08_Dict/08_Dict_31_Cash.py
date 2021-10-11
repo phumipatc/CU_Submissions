@@ -9,10 +9,7 @@
 
 
 def total(pocket):
-    sum = 0
-    for x in pocket:
-        sum += x*pocket[x]
-    return sum
+    return sum([x*pocket[x] for x in pocket])
 
 
 def take(pocket, money_in):
