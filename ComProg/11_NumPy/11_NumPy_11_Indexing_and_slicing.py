@@ -11,23 +11,23 @@ import numpy as np
 
 
 def get_column_from_bottom_to_top(A, c):
-    return np.array([x[c] for x in reversed(A)])
+    return A[::-1, c]
 
 
 def get_odd_rows(A):
-    return np.array([val for idx, val in enumerate(A) if idx % 2])
+    return A[1::2]
 
 
 def get_even_column_last_row(A):
-    return np.array([val for idx, val in enumerate(A[-1]) if idx % 2 == 0])
+    return A[-1, ::2]
 
 
 def get_diagonal1(A):
-    return np.array([A[i][i] for i in range(len(A))])
+    return A.diagonal()
 
 
 def get_diagonal2(A):
-    return np.array([A[i][len(A)-i-1] for i in range(len(A))])
+    return np.fliplr(A).diagonal()
 
 
 exec(input().strip())
