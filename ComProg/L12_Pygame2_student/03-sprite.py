@@ -50,11 +50,10 @@ class Ship(pg.sprite.Sprite):
 
 
 class Meteor(pg.sprite.Sprite):
-    def __init__(self, color, width, height):
+    def __init__(self):
         super().__init__()
 
         self.image = pg.image.load("source/img/meteor_med.png")
-        self.image = pg.transform.scale(self.image, (width, height))
 
         self.rect = self.image.get_rect()
 
@@ -73,7 +72,7 @@ myShip.rect.y = 350
 
 
 # TO DO 5-2 : สร้าง Object meteor
-meteor = Meteor(teal, 50, 38)
+meteor = Meteor()
 
 # TO DO 5-3 : กำหนดพิกัดเริ่มต้นให้ Meteor [ x = 110 , y = 170]
 meteor.rect.x = 110
@@ -107,7 +106,7 @@ while True:
         myShip.moveRight(5)
 
     # TO DO 3 : ถ้ากด arrow ขึ้น ให้ขยับยานขึ้นไป 5 หน่วย และ ถ้ากด arrow ลง ให้ขยับยานลงมา 5 หน่วย
-    elif keystate[pg.K_UP]:
+    if keystate[pg.K_UP]:
         myShip.moveUp(5)
     elif keystate[pg.K_DOWN]:
         myShip.moveDown(5)

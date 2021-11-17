@@ -2,6 +2,8 @@ import pygame as pg
 import random
 from os import path
 
+from pygame import key
+
 img_dir = path.join('source/img')
 
 # define screen resolution [width 480 , height 600 , FPS 60 ]
@@ -29,6 +31,8 @@ bullet_img = pg.image.load(path.join(img_dir, "red_bullet.png")).convert()
 # Class ที่เพิ่มเข้ามาใหม่ -> Ship , Meteor , Bullet ; Function ที่เพิ่มเข้ามาใหม่ -> newmeteor()
 
 # Class ของผู้เล่นภายในมี method __init__ , update , shoot
+
+
 class Ship(pg.sprite.Sprite):
     def __init__(self):
         pg.sprite.Sprite.__init__(self)
@@ -58,6 +62,8 @@ class Ship(pg.sprite.Sprite):
         bullets.add(bullet)
 
 # Class ของของหินภายในมี method __init__ , update
+
+
 class Meteor(pg.sprite.Sprite):
     def __init__(self):
         pg.sprite.Sprite.__init__(self)
@@ -78,6 +84,8 @@ class Meteor(pg.sprite.Sprite):
             self.speedy = random.randrange(1, 8)
 
 # Class ของลูกกระสุนภายในมี method __init__ , update
+
+
 class Bullet(pg.sprite.Sprite):
     def __init__(self, x, y):
         pg.sprite.Sprite.__init__(self)
@@ -95,11 +103,14 @@ class Bullet(pg.sprite.Sprite):
             self.kill()
 
 # function ที่สร้างหินขึ้นมา 1 ก้อน
+
+
 def newmeteor():
     m = Meteor()
     all_sprites.add(m)
     meteors.add(m)
 #################################################################################################
+
 
 new_game = True
 
@@ -110,25 +121,24 @@ while True:
 
     if new_game:
         new_game = False
-
+        score = 0
         #################################################################################################
         # TO DO 1-1 : สรา้ง sprite Group ให้กับ all_sprites, meteors, bullets, ship
 
-        all_sprites =
-        meteors =
-        bullets =
+        all_sprites = pg.sprite.Group()
+        meteors = pg.sprite.Group()
+        bullets = pg.sprite.Group()
 
         # TO DO 1-2 : สร้าง Object ให้กับ ship
-
+        ship = Ship()
 
         # TO DO 1-3 : เพิ่ม ship ลงใน all_sprites
-
+        all_sprites.add(ship)
 
         #################################################################################################
         # TO DO 2 : สร้าง Object Meteor ขึ้นมา 8 ก้อนโดยผ่านการเรียกใช้ฟังก์ชัน newmeteor()
-
-
-
+        for i in range(8):
+            newmeteor()
 
         #################################################################################################
 
@@ -137,9 +147,9 @@ while True:
             pg.quit()
         #################################################################################################
         # TO DO 3 : ตรวจสอบว่าถ้ามีการกดปุ่ม spacebar (K_SPACE) ให้ ship เรียกฟังก์ชั่นสำหรับการยิงกระสุน
-
-
-
+        keystate = pg.key.get_pressed()
+        if keystate[pg.K_SPACE]:
+            ship.shoot()
 
         #################################################################################################
 
@@ -149,24 +159,25 @@ while True:
     #################################################################################################
     # TO DO 5 : ตรวจสอบว่าลูกกระสุนชนหินหรือไม่
     # ถ้าชนให้สร้างหินขึ้นมาใหม่เท่ากับจำนวนที่ถูกชนไป
-    hits =
-
-
+    hits = pg.sprite.groupcollide(meteors, bullets, True, True)
+    for hit in hits:
+        newmeteor()
+        score += 1
 
     #################################################################################################
     # TO DO 6 : ตรวจสอบว่าหินชนยานผู้เล่นหรือไม่
     # ถ้าชนให้เริ่มเกมใหม่
-    hits =
+    hits = pg.sprite.spritecollide(ship, meteors, True)
     if hits:
-
+        new_game = True
 
     #################################################################################################
     # TO DO 4 : clear screen ด้วยสีดำ จากนั้น เอา bg ใส่ใน bg_rect
-
-
+    screen.fill(black)
+    bg_rect = bg.get_rect()
     #################################################################################################
     # TO DO 7 : วาด element ใน all_sprites ลงใน screen
-
+    all_sprites.draw(screen)
     #################################################################################################
     # after drawing everything, flip the display
     pg.display.flip()
