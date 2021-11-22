@@ -9,7 +9,6 @@
 
 
 def spiral_square(n):
-    # create sipral square start from middle
     S = [[0 for j in range(n)] for i in range(n)]
 
     x, y = n-1, n-1
