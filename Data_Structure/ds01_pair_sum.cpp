@@ -6,9 +6,7 @@
 */
 #include<bits/stdc++.h>
 using namespace std;
-int main(){
-    cin.tie(0)->sync_with_stdio(0);
-    cin.exceptions(cin.failbit);
+void map_method(){
     int n,m,num;
     cin >> n >> m;
     map<int ,int > mapp;
@@ -28,5 +26,26 @@ int main(){
         }
         cout << (found?"YES":"NO") << '\n';
     }
+}
+void vector_method(){
+    int n,m,num;
+    cin >> n >> m;
+    vector<int > v(n);
+    vector<bool> pos(2000010,false);
+    for(auto &x:v)
+        cin >> x;
+    for(int i=0;i<n;i++)
+        for(int j=i+1;j<n;j++)
+            pos[v[i]+v[j]] = true;
+    while(m--){
+        cin >> num;
+        cout << (pos[num]?"YES\n":"NO\n");
+    }
+}
+int main(){
+    cin.tie(0)->sync_with_stdio(0);
+    cin.exceptions(cin.failbit);
+    // map_method();
+    vector_method();
     return 0;
 }
