@@ -25,7 +25,7 @@ class Song {
 };
 class cmp1{
 	public:
-		bool operator()(const Song &lhs,const Song &rhs){
+		bool operator()(const Song &lhs,const Song &rhs) const{
 			if(lhs.artist != rhs.artist)
 				return lhs.artist > rhs.artist;
 			else if(lhs.title != rhs.title)
@@ -37,7 +37,7 @@ class cmp1{
 
 class cmp2{
 	public:
-		bool operator()(const Song &lhs,const Song &rhs){
+		bool operator()(const Song &lhs,const Song &rhs) const{
 			if(lhs.count != rhs.count)
 				return lhs.count < rhs.count;
 			else if(lhs.artist != rhs.artist)
