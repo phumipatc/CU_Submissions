@@ -27,9 +27,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000d541  00000000  00000000  0002003c  2**0
+ 12 .debug_info   0000d53e  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001a10  00000000  00000000  0002d57d  2**0
+ 13 .debug_abbrev 00001a10  00000000  00000000  0002d57a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  14 .debug_aranges 00000c60  00000000  00000000  0002ef90  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -1055,10 +1055,10 @@ int main(void)
   int state=1;
  8000cee:	2301      	movs	r3, #1
  8000cf0:	61fb      	str	r3, [r7, #28]
-//	 	HAL_UART_Transmit(&huart2, itoa(adcValue, buffer, 10), 4, 100);
-//		HAL_UART_Transmit(&huart2, "\n\r", 2, 100);
-//	 }
+//	 TIM2->CCR1+=state;
+//	 HAL_Delay(10);
 
+//	Lab 4.2: Lab 4.2: Connect LDR to STM32F4Discovery Board and create a new STM32 Project on System Workbench IDE to read the value from LDR and display to serial terminal via UART
 //	Lab 4.3: control a red LED (LD5) brightness with PWM from the value of LDR with this equation
 	 int currentPulse = TIM2->CCR1;
  8000cf2:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
@@ -1128,6 +1128,7 @@ int main(void)
  8000d7c:	4602      	mov	r2, r0
  8000d7e:	f04f 4380 	mov.w	r3, #1073741824	; 0x40000000
  8000d82:	635a      	str	r2, [r3, #52]	; 0x34
+
 		HAL_UART_Transmit(&huart2, itoa(adcValue, buffer, 10), 4, 100);
  8000d84:	463b      	mov	r3, r7
  8000d86:	220a      	movs	r2, #10
