@@ -98,7 +98,7 @@ int main(void)
   memset(data,'.',sizeof data);
   while (1)
   {
-//	 Lab 2-1 and 2-2 : blink (on/off) with a period of 0.2 sec. for an on board LED
+//	 Lab 2-1 : blink (on/off) with a period of 0.2 sec. for an on board LED
 //	 Lab 2-2 :  blink (on/off) with a period of 0.2 sec. for an external LED
 //	 HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
 //	 HAL_Delay(200);
@@ -116,23 +116,23 @@ int main(void)
 
 //	 Lab 2-4 : echo back (transmit the receive data) the communication data from UART peripheral (USART2) interface using blocking mode APIs on STM32CUBE library (Look at stm32f4xx_hal_uart.c)
 //	 The USART2 interface available on PA2 and PA3 of the STM32 microcontroller
-	 HAL_UART_Receive(&huart2, data, sizeof(data), 100000);
-	 HAL_UART_Transmit(&huart2, data, sizeof(data), 100);
-	 HAL_UART_Transmit(&huart2, "\r\n", 2, 100);
+//	 HAL_UART_Receive(&huart2, data, sizeof(data), 100000);
+//	 HAL_UART_Transmit(&huart2, data, sizeof(data), 100);
+//	 HAL_UART_Transmit(&huart2, "\r\n", 2, 100);
 
 //
 //	 Lab 2-5 : (continue from Lab 4) toggle an LED status (on/off) with commands via serial console. (Type “on” or “off”)  then press Enter to on or off the LED
-//	  HAL_UART_Receive(&huart2, inp, sizeof(inp), 100000);
-//	  int i;
-//	  for(i=0;i<4;i++)
-//		  data[i] = data[i+1];
-//	  data[4] = inp[0];
-//	  HAL_UART_Transmit(&huart2, data, sizeof(data), 100);
-//	  HAL_UART_Transmit(&huart2, "\r\n", 2, 100);
-//	  if(data[2] == 'o' && data[3] == 'n' && data[4] == '\r' && (data[1] == '\r' || data[1] == '.'))
-//		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-//	  else if(data[1] == 'o' && data[2] == 'f' && data[3] == 'f' && data[4] == '\r' && (data[0] == '\r' || data[0] == '.'))
-//		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+	  HAL_UART_Receive(&huart2, inp, sizeof(inp), 100000);
+	  int i;
+	  for(i=0;i<4;i++)
+		  data[i] = data[i+1];
+	  data[4] = inp[0];
+	  HAL_UART_Transmit(&huart2, data, sizeof(data), 100);
+	  HAL_UART_Transmit(&huart2, "\r\n", 2, 100);
+	  if(data[2] == 'o' && data[3] == 'n' && data[4] == '\r' && (data[1] == '\r' || data[1] == '.'))
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+	  else if(data[1] == 'o' && data[2] == 'f' && data[3] == 'f' && data[4] == '\r' && (data[0] == '\r' || data[0] == '.'))
+		  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
 	/* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

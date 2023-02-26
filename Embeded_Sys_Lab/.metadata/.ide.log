@@ -16013,3 +16013,10 @@
 2566-02-16 15:00:19,098 [INFO] WebAppUi:459 - Close the Jxbrowser engine manually
 2566-02-16 15:00:19,135 [INFO] WebAppUi:462 - Profiles folder deleted
 2566-02-16 15:00:19,359 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 
+2566-02-23 13:26:02,433 [INFO] Activator:179 - 
+
+
+2566-02-23 13:26:02,434 [INFO] Activator:180 - !SESSION log4j initialized
+2566-02-23 13:26:29,229 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2566-02-23 13:26:29,230 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: Defaulting to no-operation (NOP) logger implementation
+2566-02-23 13:26:29,231 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.

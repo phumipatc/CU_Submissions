@@ -1,4 +1,4 @@
-13:25:53 **** Incremental Build of configuration Debug for project Lab2 ****
+14:04:51 **** Incremental Build of configuration Debug for project Lab2 ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
@@ -10,11 +10,11 @@ arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -D
    20 | #include "main.h"
   +++ |+#include <string.h>
    21 | 
-../Core/Src/main.c:119:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive' differ in signedness [-Wpointer-sign]
-  119 |   HAL_UART_Receive(&huart2, data, sizeof(data), 100000);
-      |                             ^~~~
-      |                             |
-      |                             char *
+../Core/Src/main.c:125:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Receive' differ in signedness [-Wpointer-sign]
+  125 |    HAL_UART_Receive(&huart2, inp, sizeof(inp), 100000);
+      |                              ^~~
+      |                              |
+      |                              char *
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
                  from ../Core/Inc/main.h:30,
@@ -22,11 +22,11 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:72: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
   723 | HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
       |                                                               ~~~~~~~~~^~~~~
-../Core/Src/main.c:120:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  120 |   HAL_UART_Transmit(&huart2, data, sizeof(data), 100);
-      |                              ^~~~
-      |                              |
-      |                              char *
+../Core/Src/main.c:130:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  130 |    HAL_UART_Transmit(&huart2, data, sizeof(data), 100);
+      |                               ^~~~
+      |                               |
+      |                               char *
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
                  from ../Core/Inc/main.h:30,
@@ -34,11 +34,11 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
   722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
       |                                                                ~~~~~~~~~~~~~~~^~~~~
-../Core/Src/main.c:121:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  121 |   HAL_UART_Transmit(&huart2, "\r\n", 2, 100);
-      |                              ^~~~~~
-      |                              |
-      |                              char *
+../Core/Src/main.c:131:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  131 |    HAL_UART_Transmit(&huart2, "\r\n", 2, 100);
+      |                               ^~~~~~
+      |                               |
+      |                               char *
 In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
                  from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
                  from ../Core/Inc/main.h:30,
@@ -46,9 +46,6 @@ In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
   722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
       |                                                                ~~~~~~~~~~~~~~~^~~~~
-../Core/Src/main.c:97:17: warning: unused variable 'inp' [-Wunused-variable]
-   97 |   char data[10],inp[1];
-      |                 ^~~
 ../Core/Src/main.c:96:27: warning: unused variable 'now' [-Wunused-variable]
    96 |   int isToggle,isPressing,now=0;
       |                           ^~~
@@ -64,11 +61,11 @@ Finished building target: Lab2.elf
 arm-none-eabi-size   Lab2.elf 
 arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
    text	   data	    bss	    dec	    hex	filename
-   8560	     20	   1636	  10216	   27e8	Lab2.elf
+   8688	     20	   1636	  10344	   2868	Lab2.elf
 Finished building: default.size.stdout
  
 Finished building: Lab2.list
  
 
-13:25:53 Build Finished. 0 errors, 9 warnings. (took 702ms)
+14:04:52 Build Finished. 0 errors, 8 warnings. (took 1s.267ms)
 
