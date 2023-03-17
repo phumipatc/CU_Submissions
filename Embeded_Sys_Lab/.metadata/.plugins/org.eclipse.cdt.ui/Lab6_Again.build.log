@@ -1,0 +1,74 @@
+14:47:33 **** Incremental Build of configuration Debug for project Lab6_Again ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'UART0_Thread':
+../Core/Src/main.c:139:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  139 |   sprintf(buffer, "TID: %d %d\r\n", threadID, idx);
+      |   ^~~~~~~
+../Core/Src/main.c:139:3: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c: In function 'UART1_Thread':
+../Core/Src/main.c:153:3: warning: incompatible implicit declaration of built-in function 'sprintf'
+  153 |   sprintf(buffer, "TID: %d %d\r\n", threadID, idx);
+      |   ^~~~~~~
+../Core/Src/main.c:153:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c: In function 'Queue_Thread':
+../Core/Src/main.c:166:39: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  166 |    HAL_UART_Transmit(&huart2, buffer, strlen(buffer), 1000);
+      |                                       ^~~~~~
+../Core/Src/main.c:166:39: warning: incompatible implicit declaration of built-in function 'strlen'
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:166:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  166 |    HAL_UART_Transmit(&huart2, buffer, strlen(buffer), 1000);
+      |                               ^~~~~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:269:16: warning: unused variable 'thread_Queue' [-Wunused-variable]
+  269 |   osThreadId_t thread_Queue = osThreadNew(Queue_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:267:16: warning: unused variable 'thread_UART1' [-Wunused-variable]
+  267 |   osThreadId_t thread_UART1 = osThreadNew(UART1_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:266:16: warning: unused variable 'thread_UART0' [-Wunused-variable]
+  266 |   osThreadId_t thread_UART0 = osThreadNew(UART0_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~~
+../Core/Src/main.c:259:16: warning: unused variable 'thread_led4' [-Wunused-variable]
+  259 |   osThreadId_t thread_led4 = osThreadNew(LED4_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:258:16: warning: unused variable 'thread_led3' [-Wunused-variable]
+  258 |   osThreadId_t thread_led3 = osThreadNew(LED3_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:257:16: warning: unused variable 'thread_led2' [-Wunused-variable]
+  257 |   osThreadId_t thread_led2 = osThreadNew(LED2_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~
+../Core/Src/main.c:256:16: warning: unused variable 'thread_led1' [-Wunused-variable]
+  256 |   osThreadId_t thread_led1 = osThreadNew(LED1_Thread, NULL, NULL);
+      |                ^~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab6_Again.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Lab6_Again\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_Again.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_Again.elf
+ 
+arm-none-eabi-size   Lab6_Again.elf 
+arm-none-eabi-objdump -h -S  Lab6_Again.elf  > "Lab6_Again.list"
+   text	   data	    bss	    dec	    hex	filename
+  24984	    124	  21044	  46152	   b448	Lab6_Again.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_Again.list
+ 
+
+14:47:34 Build Finished. 0 errors, 13 warnings. (took 995ms)
+

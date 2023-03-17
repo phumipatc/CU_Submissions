@@ -1,0 +1,65 @@
+13:52:36 **** Incremental Build of configuration Debug for project Lab6 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'UART0_Thread':
+../Core/Src/main.c:115:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  115 |   sprintf(buffer, "TID: %d %d\r\n", threadID, idx);
+      |   ^~~~~~~
+../Core/Src/main.c:115:3: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:117:38: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  117 |   HAL_UART_Transmit(&huart2, buffer, strlen(buffer), 1000);
+      |                                      ^~~~~~
+../Core/Src/main.c:117:38: warning: incompatible implicit declaration of built-in function 'strlen'
+../Core/Src/main.c:22:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   21 | #include "cmsis_os.h"
+  +++ |+#include <string.h>
+   22 | 
+../Core/Src/main.c:117:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  117 |   HAL_UART_Transmit(&huart2, buffer, strlen(buffer), 1000);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'UART1_Thread':
+../Core/Src/main.c:132:3: warning: incompatible implicit declaration of built-in function 'sprintf'
+  132 |   sprintf(buffer, "TID: %d %d\r\n", threadID, idx);
+      |   ^~~~~~~
+../Core/Src/main.c:132:3: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:134:38: warning: incompatible implicit declaration of built-in function 'strlen'
+  134 |   HAL_UART_Transmit(&huart2, buffer, strlen(buffer), 1000);
+      |                                      ^~~~~~
+../Core/Src/main.c:134:38: note: include '<string.h>' or provide a declaration of 'strlen'
+../Core/Src/main.c:134:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  134 |   HAL_UART_Transmit(&huart2, buffer, strlen(buffer), 1000);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Lab6.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Lab6\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+d:\program files\stm32cubeide_1.11.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\bin\ld.exe: ./Core/Src/main.o: in function `StartDefaultTask':
+D:/Code/CU/Embeded_Sys_Lab/Lab6/Debug/../Core/Src/main.c:395: undefined reference to `osTimerCreate'
+d:\program files\stm32cubeide_1.11.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\bin\ld.exe: D:/Code/CU/Embeded_Sys_Lab/Lab6/Debug/../Core/Src/main.c:398: undefined reference to `osTimerCreate'
+d:\program files\stm32cubeide_1.11.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\bin\ld.exe: D:/Code/CU/Embeded_Sys_Lab/Lab6/Debug/../Core/Src/main.c:401: undefined reference to `osTimerCreate'
+d:\program files\stm32cubeide_1.11.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\bin\ld.exe: D:/Code/CU/Embeded_Sys_Lab/Lab6/Debug/../Core/Src/main.c:404: undefined reference to `osTimerCreate'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: Lab6.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+13:52:37 Build Failed. 6 errors, 8 warnings. (took 869ms)
+

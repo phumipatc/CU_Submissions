@@ -1,0 +1,17 @@
+main.c:105:6:LED1_Thread	1
+main.c:112:6:LED2_Thread	1
+main.c:119:6:LED3_Thread	1
+main.c:126:6:LED4_Thread	1
+main.c:133:6:UART0_Thread	1
+main.c:147:6:UART1_Thread	1
+main.c:161:6:Queue_Thread	2
+main.c:181:5:main	1
+main.c:294:6:SystemClock_Config	3
+main.c:341:13:MX_USART2_UART_Init	2
+main.c:374:13:MX_GPIO_Init	1
+main.c:427:6:StartDefaultTask	1
+main.c:439:6:Callback01	1
+main.c:447:6:Callback02	1
+main.c:455:6:Callback03	1
+main.c:463:6:Callback04	1
+main.c:474:6:Error_Handler	1

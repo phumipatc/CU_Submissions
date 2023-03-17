@@ -1,0 +1,41 @@
+13:37:43 **** Incremental Build of configuration Debug for project Quiz1 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:60:1: warning: return type defaults to 'int' [-Wimplicit-int]
+   60 | HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+      | ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:60:1: warning: conflicting types for 'HAL_UART_RxCpltCallback'
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:748:6: note: previous declaration of 'HAL_UART_RxCpltCallback' was here
+  748 | void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+      |      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:67:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+   67 |   HAL_UART_Transmit(&huart2, "Power Down", 10, 100);
+      |                              ^~~~~~~~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz1.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Real_Test\Quiz1\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz1.elf
+ 
+arm-none-eabi-size   Quiz1.elf 
+arm-none-eabi-objdump -h -S  Quiz1.elf  > "Quiz1.list"
+   text	   data	    bss	    dec	    hex	filename
+  11652	     20	   1644	  13316	   3404	Quiz1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz1.list
+ 
+
+13:37:44 Build Finished. 0 errors, 3 warnings. (took 746ms)
+

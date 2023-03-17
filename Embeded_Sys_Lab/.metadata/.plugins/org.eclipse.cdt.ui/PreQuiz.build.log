@@ -1,0 +1,36 @@
+17:09:57 **** Incremental Build of configuration Debug for project PreQuiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:125:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  125 |    HAL_UART_Transmit(&huart2, "Finished\r\n", 10, 100);
+      |                               ^~~~~~~~~~~~~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:120:11: warning: unused variable 'buffer' [-Wunused-variable]
+  120 |   uint8_t buffer[10];
+      |           ^~~~~~
+../Core/Src/main.c:97:37: warning: variable 'counter' set but not used [-Wunused-but-set-variable]
+   97 |   int changeConfirm = 0,running = 1,counter = 0;
+      |                                     ^~~~~~~
+arm-none-eabi-gcc -o "PreQuiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\PreQuiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PreQuiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: PreQuiz.elf
+ 
+arm-none-eabi-size   PreQuiz.elf 
+arm-none-eabi-objdump -h -S  PreQuiz.elf  > "PreQuiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8540	     20	   1636	  10196	   27d4	PreQuiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: PreQuiz.list
+ 
+
+17:09:58 Build Finished. 0 errors, 3 warnings. (took 795ms)
+

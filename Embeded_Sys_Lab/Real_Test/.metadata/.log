@@ -1,0 +1,27 @@
+!SESSION 2566-03-02 13:00:39.605 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\Code\CU\Embeded_Sys_Lab\Real_Test
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2566-03-02 13:00:43.571
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2566-03-02 13:00:43.618
+!MESSAGE Log4j initialized with config file D:\Code\CU\Embeded_Sys_Lab\Real_Test\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2566-03-02 13:00:45.700
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-03-02 13:01:37.776
+!MESSAGE Indexed 'Quiz1' (22 sources, 82 headers) in 2.22 sec: 4,741 declarations; 22,751 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0073%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-03-02 13:25:56.201
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2023-03-02 13:26:11.602
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.core.resources 4 566 2023-03-02 13:45:38.014
+!MESSAGE Workspace was not properly initialized or has already shutdown.

@@ -1,17 +1,36 @@
-14:28:34 **** Incremental Build of configuration Debug for project Lab5 ****
+17:09:56 **** Build of configuration Debug for project Lab5 ****
 make -j16 all 
-arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:116:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  116 |    HAL_UART_Transmit(&huart2, "1", 1, 1000);
+      |                               ^~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:109:11: warning: unused variable 'data' [-Wunused-variable]
+  109 |   uint8_t data[1];
+      |           ^~~~
+../Core/Src/main.c:108:12: warning: unused variable 'slaveAddress' [-Wunused-variable]
+  108 |   uint16_t slaveAddress = 0x02;
+      |            ^~~~~~~~~~~~
 arm-none-eabi-gcc -o "Lab5.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Lab5\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Lab5.elf
  
 arm-none-eabi-size   Lab5.elf 
 arm-none-eabi-objdump -h -S  Lab5.elf  > "Lab5.list"
    text	   data	    bss	    dec	    hex	filename
-  11656	     20	   1876	  13552	   34f0	Lab5.elf
+  10076	     20	   1876	  11972	   2ec4	Lab5.elf
 Finished building: default.size.stdout
  
 Finished building: Lab5.list
  
 
-14:28:35 Build Finished. 0 errors, 0 warnings. (took 767ms)
+17:09:56 Build Finished. 0 errors, 3 warnings. (took 870ms)
 

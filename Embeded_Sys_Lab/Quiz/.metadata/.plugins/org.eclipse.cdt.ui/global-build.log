@@ -1,0 +1,883 @@
+10:42:31 **** Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f411retx.d" -MT"Core/Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f411retx.o" "../Core/Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:99:3: error: unknown type name 'uint8'; did you mean 'uint8_t'?
+   99 |   uint8 data[1];
+      |   ^~~~~
+      |   uint8_t
+../Core/Src/main.c:105:3: error: 'cnt' undeclared (first use in this function); did you mean 'int'?
+  105 |   cnt = 0;
+      |   ^~~
+      |   int
+../Core/Src/main.c:105:3: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:115:28: warning: passing argument 2 of 'HAL_UART_Receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  115 |  HAL_UART_Receive(&huart2, data, 1, 25);
+      |                            ^~~~
+      |                            |
+      |                            int *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:723:72: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'int *'
+  723 | HAL_StatusTypeDef HAL_UART_Receive(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                               ~~~~~~~~~^~~~~
+../Core/Src/main.c:117:10: warning: comparison between pointer and integer
+  117 |  if(data == 'q' && state2 == 0){
+      |          ^~
+../Core/Src/main.c:118:10: warning: statement with no effect [-Wunused-value]
+  118 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:119:16: warning: comparison between pointer and integer
+  119 |  }else if(data == '!' && state2 == 1){
+      |                ^~
+../Core/Src/main.c:122:9: warning: statement with no effect [-Wunused-value]
+  122 |   state == 0;
+      |   ~~~~~~^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+10:43:01 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:117:10: warning: comparison between pointer and integer
+  117 |  if(data == 'q' && state2 == 0){
+      |          ^~
+../Core/Src/main.c:118:10: warning: statement with no effect [-Wunused-value]
+  118 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:119:16: warning: comparison between pointer and integer
+  119 |  }else if(data == '!' && state2 == 1){
+      |                ^~
+../Core/Src/main.c:122:9: warning: statement with no effect [-Wunused-value]
+  122 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8508	     20	   1636	  10164	   27b4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:43:06 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8508	     20	   1636	  10164	   27b4	Quiz.elf
+Finished building: default.size.stdout
+ 
+10:43:50 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:117:10: warning: comparison between pointer and integer
+  117 |  if(data == 'q' && state2 == 0){
+      |          ^~
+../Core/Src/main.c:118:10: warning: statement with no effect [-Wunused-value]
+  118 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:119:16: warning: comparison between pointer and integer
+  119 |  }else if(data == '!' && state2 == 1){
+      |                ^~
+../Core/Src/main.c:122:9: warning: statement with no effect [-Wunused-value]
+  122 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8508	     20	   1636	  10164	   27b4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:45:01 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:10: warning: statement with no effect [-Wunused-value]
+  118 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:122:9: warning: statement with no effect [-Wunused-value]
+  122 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8508	     20	   1636	  10164	   27b4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:46:22 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:122:10: warning: statement with no effect [-Wunused-value]
+  122 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:126:9: warning: statement with no effect [-Wunused-value]
+  126 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8512	     20	   1636	  10168	   27b8	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:47:49 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:123:10: warning: statement with no effect [-Wunused-value]
+  123 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:127:9: warning: statement with no effect [-Wunused-value]
+  127 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8816	     20	   1636	  10472	   28e8	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:48:26 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  120 |  HAL_UART_Transmit(&huart2, (uint8_t)state, 1, 0);
+      |                             ^~~~~~~~~~~~~~
+      |                             |
+      |                             unsigned char
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'unsigned char'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:123:10: warning: statement with no effect [-Wunused-value]
+  123 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:127:9: warning: statement with no effect [-Wunused-value]
+  127 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8820	     20	   1636	  10476	   28ec	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:48:44 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  120 |  HAL_UART_Transmit(&huart2, (uint8_t)state2, 1, 0);
+      |                             ^~~~~~~~~~~~~~~
+      |                             |
+      |                             unsigned char
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'unsigned char'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:123:10: warning: statement with no effect [-Wunused-value]
+  123 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:127:9: warning: statement with no effect [-Wunused-value]
+  127 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8820	     20	   1636	  10476	   28ec	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:49:22 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state2,buffer,1), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:120:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state2,buffer,1), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:123:10: warning: statement with no effect [-Wunused-value]
+  123 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:127:9: warning: statement with no effect [-Wunused-value]
+  127 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9060	     20	   1636	  10716	   29dc	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:50:24 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state2,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:120:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state2,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:123:10: warning: statement with no effect [-Wunused-value]
+  123 |   state2 == 1;
+      |   ~~~~~~~^~~~
+../Core/Src/main.c:127:9: warning: statement with no effect [-Wunused-value]
+  127 |   state == 0;
+      |   ~~~~~~^~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9060	     20	   1636	  10716	   29dc	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:50:54 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state2,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:120:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state2,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9068	     20	   1636	  10724	   29e4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:51:44 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9068	     20	   1636	  10724	   29e4	Quiz.elf
+Finished building: default.size.stdout
+ 
+10:52:42 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:120:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:120:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  120 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9068	     20	   1636	  10724	   29e4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:56:00 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  121 |  HAL_UART_Transmit(&huart2, itoa(offTime,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:121:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  121 |  HAL_UART_Transmit(&huart2, itoa(offTime,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9068	     20	   1636	  10724	   29e4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:57:56 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:121:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9068	     20	   1636	  10724	   29e4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+10:59:12 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:121:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9060	     20	   1636	  10716	   29dc	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:00:20 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:121:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9060	     20	   1636	  10716	   29dc	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:01:09 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:121:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9060	     20	   1636	  10716	   29dc	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:01:36 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:121:29: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~
+../Core/Src/main.c:121:29: warning: passing argument 2 of 'HAL_UART_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+  121 |  HAL_UART_Transmit(&huart2, itoa(state,buffer,10), 1, 0);
+      |                             ^~~~~~~~~~~~~~~~~~~~~
+      |                             |
+      |                             int
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:406,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   9068	     20	   1636	  10724	   29e4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:02:22 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:99:19: warning: unused variable 'buffer' [-Wunused-variable]
+   99 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8832	     20	   1636	  10488	   28f8	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:02:54 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8832	     20	   1636	  10488	   28f8	Quiz.elf
+Finished building: default.size.stdout
+ 
+11:04:09 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:99:19: warning: unused variable 'buffer' [-Wunused-variable]
+   99 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8844	     20	   1636	  10500	   2904	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:04:32 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8844	     20	   1636	  10500	   2904	Quiz.elf
+Finished building: default.size.stdout
+ 
+11:05:40 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8844	     20	   1636	  10500	   2904	Quiz.elf
+Finished building: default.size.stdout
+ 
+11:05:55 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8844	     20	   1636	  10500	   2904	Quiz.elf
+Finished building: default.size.stdout
+ 
+11:06:40 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8844	     20	   1636	  10500	   2904	Quiz.elf
+Finished building: default.size.stdout
+ 
+11:07:53 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-size   Quiz.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8844	     20	   1636	  10500	   2904	Quiz.elf
+Finished building: default.size.stdout
+ 
+11:09:18 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8880	     20	   1636	  10536	   2928	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:10:04 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8880	     20	   1636	  10536	   2928	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:11:37 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8572	     20	   1636	  10228	   27f4	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:12:49 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8588	     20	   1636	  10244	   2804	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:13:12 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8596	     20	   1636	  10252	   280c	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:14:06 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8620	     20	   1636	  10276	   2824	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:41:34 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8944	     20	   1636	  10600	   2968	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:42:37 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8944	     20	   1636	  10600	   2968	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:45:47 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8944	     20	   1636	  10600	   2968	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+11:48:03 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8948	     20	   1636	  10604	   296c	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+12:58:30 **** Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8960	     20	   1636	  10616	   2978	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+12:58:59 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8960	     20	   1636	  10616	   2978	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
+12:59:21 **** Incremental Build of configuration Debug for project Quiz ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:100:19: warning: unused variable 'buffer' [-Wunused-variable]
+  100 |   uint8_t data[1],buffer[2];
+      |                   ^~~~~~
+arm-none-eabi-gcc -o "Quiz.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Quiz\Quiz\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Quiz.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Quiz.elf
+ 
+arm-none-eabi-size   Quiz.elf 
+arm-none-eabi-objdump -h -S  Quiz.elf  > "Quiz.list"
+   text	   data	    bss	    dec	    hex	filename
+   8960	     20	   1636	  10616	   2978	Quiz.elf
+Finished building: default.size.stdout
+ 
+Finished building: Quiz.list
+ 
