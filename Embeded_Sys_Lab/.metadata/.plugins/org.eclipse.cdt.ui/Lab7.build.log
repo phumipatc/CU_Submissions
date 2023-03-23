@@ -1,0 +1,46 @@
+11:16:40 **** Incremental Build of configuration Debug for project Lab7 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:70:46: warning: passing argument 2 of 'HAL_DMA_Start' makes integer from pointer without a cast [-Wint-conversion]
+   70 |   HAL_DMA_Start(&hdma_memtomem_dma2_stream0, arr0, arr1, 256);
+      |                                              ^~~~
+      |                                              |
+      |                                              uint8_t * {aka unsigned char *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:287,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:662:68: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  662 | HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+      |                                                           ~~~~~~~~~^~~~~~~~~~
+../Core/Src/main.c:70:52: warning: passing argument 3 of 'HAL_DMA_Start' makes integer from pointer without a cast [-Wint-conversion]
+   70 |   HAL_DMA_Start(&hdma_memtomem_dma2_stream0, arr0, arr1, 256);
+      |                                                    ^~~~
+      |                                                    |
+      |                                                    uint8_t * {aka unsigned char *}
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:287,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h:662:89: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  662 | HAL_StatusTypeDef HAL_DMA_Start (DMA_HandleTypeDef *hdma, uint32_t SrcAddress, uint32_t DstAddress, uint32_t DataLength);
+      |                                                                                ~~~~~~~~~^~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:109:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  109 |  if(htim->Instance = TIM2){
+      |     ^~~~
+arm-none-eabi-gcc -o "Lab7.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Code\CU\Embeded_Sys_Lab\Lab7\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab7.elf
+ 
+arm-none-eabi-size   Lab7.elf 
+arm-none-eabi-objdump -h -S  Lab7.elf  > "Lab7.list"
+   text	   data	    bss	    dec	    hex	filename
+  17424	     24	   2528	  19976	   4e08	Lab7.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab7.list
+ 
+
+11:16:41 Build Finished. 0 errors, 3 warnings. (took 838ms)
+
