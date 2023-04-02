@@ -64,7 +64,7 @@ static void MX_TIM2_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t arr0[256],arr1[256];
-int now = 0,sz = 16,needToPrint = 0,printingIndex = 0,printingArray = 0;
+int now = 0,sz = 256,needToPrint = 0,printingIndex = 0,printingArray = 0;
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == GPIO_PIN_13){
 		HAL_DMA_Start(&hdma_memtomem_dma2_stream0, arr0, arr1, 256);
@@ -104,8 +104,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 		needToPrint = 0;
 		return ;
 	}
-	int printingSize = 10;
-	if(sz-printingIndex < 10) 	printingSize = sz-printingIndex;
+	int printingSize = 1;
 	if(htim->Instance = TIM2){
 		if(printingArray == 0){
 			HAL_UART_Transmit_DMA(&huart2, arr0, printingSize);
@@ -113,7 +112,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 			HAL_UART_Transmit_DMA(&huart2, arr1, printingSize);
 		}
 	}
-	printingIndex+=10;
+	printingIndex++;
 }
 /* USER CODE END 0 */
 
@@ -150,15 +149,15 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 //  																	LAB 7-1 BEGIN
-  for(int i=0;i<256;i++)
-	  arr0[i] = ((i + 55) * 37) % 57;
-  HAL_DMA_Init(&hdma_memtomem_dma2_stream0);
+//  for(int i=0;i<256;i++)
+//	  arr0[i] = ((i + 55) * 37) % 57;
+//  HAL_DMA_Init(&hdma_memtomem_dma2_stream0);
 //  																	LAB 7-1 END
 //																		LAB 7-2 BEGIN
-//  HAL_UART_Receive_DMA(&huart2, arr0, sz);
+  HAL_UART_Receive_DMA(&huart2, arr0, sz);
 //  																	LAB 7-2 END
 //  																	LAB 7-3 BEGIN
-//  HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_Base_Start_IT(&htim2);
 //  																	LAB 7-3 END
 
   /* USER CODE END 2 */
@@ -243,7 +242,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 100;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 1000000;
+  htim2.Init.Period = 100000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
