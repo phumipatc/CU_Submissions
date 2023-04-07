@@ -106,31 +106,31 @@ int main(void)
   while (1)
   {
 //	Lab 4.1: DIM a red LED (LD5) by increasing the duty cycle from 0% duty cycle by 1% every 0.01 second. When the PWM reaches the 100% duty cycle, decrease the duty cycle by 1% every 0.01 second to 0% duty cycle. Repeat the following step forever. (use 100 microseconds period for PWM)
-//	 int currentPulse = TIM2->CCR1;
-//	 if(state == 1 && currentPulse == 100)
-//	 	state = -1;
-//	 else if(state == -1 && currentPulse == 0)
-//	 	state = 1;
-//	 TIM2->CCR1+=state;
-//	 HAL_Delay(10);
+	 int currentPulse = TIM2->CCR1;
+	 if(state == 1 && currentPulse == 100)
+	 	state = -1;
+	 else if(state == -1 && currentPulse == 0)
+	 	state = 1;
+	 TIM2->CCR1+=state;
+	 HAL_Delay(10);
 
 //	Lab 4.2: Lab 4.2: Connect LDR to STM32F4Discovery Board and create a new STM32 Project on System Workbench IDE to read the value from LDR and display to serial terminal via UART
 //	Lab 4.3: control a red LED (LD5) brightness with PWM from the value of LDR with this equation
-	 int currentPulse = TIM2->CCR1;
-	 HAL_ADC_Start(&hadc1);
-	 int adcValue;
-	 int mx = 4095,mn = 2300;
-	 uint8_t buffer[4];
-	 if(HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK){
-	 	adcValue = HAL_ADC_GetValue(&hadc1);
-	 	int C = mx - adcValue;
-		int P = mx - mn;
-		TIM2->CCR1 = (int )((1-((double )C/P)) * 100);
-
-		HAL_UART_Transmit(&huart2, itoa(adcValue, buffer, 10), 4, 100);
-//		HAL_UART_Transmit(&huart2, itoa((int )((1-((double )C/P)) * 100), buffer, 10), 4, 100);
-		HAL_UART_Transmit(&huart2, "\n\r", 2, 100);
-	 }
+//	 int currentPulse = TIM2->CCR1;
+//	 HAL_ADC_Start(&hadc1);
+//	 int adcValue;
+//	 int mx = 4095,mn = 2300;
+//	 uint8_t buffer[4];
+//	 if(HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK){
+//	 	adcValue = HAL_ADC_GetValue(&hadc1);
+//	 	int C = mx - adcValue;
+//		int P = mx - mn;
+//		TIM2->CCR1 = (int )((1-((double )C/P)) * 100);
+//
+//		HAL_UART_Transmit(&huart2, itoa(adcValue, buffer, 10), 4, 100);
+////		HAL_UART_Transmit(&huart2, itoa((int )((1-((double )C/P)) * 100), buffer, 10), 4, 100);
+//		HAL_UART_Transmit(&huart2, "\n\r", 2, 100);
+//	 }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -335,6 +335,8 @@ static void MX_USART2_UART_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
@@ -348,6 +350,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */

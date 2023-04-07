@@ -2,7 +2,7 @@
 	Task	: ex06e1_cable
 	Author	: Phumipat C. [MAGCARI]
 	Language: C++
-	Created	: 01 April 2023 [09:33]
+	Created	: 02 April 2023 [12:25]
 */
 #include<bits/stdc++.h>
 #define rep(i, a, b) for(int i = a; i <= (b); ++i)
@@ -22,36 +22,35 @@ using PLL = pair<long long ,long long >;
 const int dir4[2][4] = {{1,-1,0,0},{0,0,1,-1}};
 const int dir8[2][8] = {{-1,-1,-1,0,1,1,1,0},{-1,0,1,1,-1,0,1,-1}};
 const int N = 1010;
-struct A{
-	int u,v,w;
-	bool operator < (const A&o) const{
-		return w<o.w;
-	}
-};
-int p[N];
-vector<A > edges;
-int fr(int u){
-	if(u == p[u])	return u;
-	else			return p[u] = fr(p[u]);
-}
+int a[N][N],dis[N],id[N];
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
 	cin.exceptions(cin.failbit);
 	int n;
 	cin >> n;
-	edges.resize(n-1);
-	for(auto &x:edges)
-		cin >> x.u >> x.v >> x.w;
-	sort(all(edges));
-	iota(p,p+n+1,0);
-	int ans = 0;
-	for(auto x:edges){
-		int ru = fr(x.u);
-		int rv = fr(x.v);
-		if(ru == rv)	continue;
-		p[ru] = rv;
-		ans+=x.w;
+	rep(i,1,n-1){
+		id[i] = i;
+		dis[i] = 1e9;
+		rep(j,i+1,n)
+			cin >> a[i][j];
 	}
-	cout << ans << '\n';
+	id[n] = n,dis[n] = 1e9;
+	dis[1] = 0;
+	rep(i,1,n-1){
+		int minn = 1e9,idx = 0;
+		rep(j,i+1,n){
+			dis[j] = min(dis[j],a[min(id[i],id[j])][max(id[i],id[j])]);
+			if(dis[j] < minn){
+				minn = dis[j];
+				idx = j;
+			}
+		}
+		swap(dis[i+1],dis[idx]);
+		swap(id[i+1],id[idx]);
+	}
+	int sum = 0;
+	rep(i,1,n)
+		sum+=dis[i];
+	cout << sum << '\n';
 	return 0;
 }

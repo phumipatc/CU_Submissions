@@ -1,0 +1,35 @@
+2566.04.04 11:06:46 INFO  Started: Metals version 0.11.11 in workspace 'D:\Code\CU\Prog_Lang_Prin\hello-world' for client Visual Studio Code 1.70.0.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/bossy/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2566.04.04 11:06:47 INFO  time: initialize in 0.91s
+2566.04.04 11:06:49 WARN  Build server is not auto-connectable.
+2566.04.04 11:06:49 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\hello-world\src\main\scala\Main.scala
+2566.04.04 11:06:53 INFO  no build target found for D:\Code\CU\Prog_Lang_Prin\hello-world\src\main\scala\Main.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2566.04.04 11:06:54 INFO  running 'C:\Program Files\Java\jdk-17.0.1\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\bossy\AppData\Local\Temp\metals7014227126930821519\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2566.04.04 11:06:55 ERROR [info] [launcher] getting org.scala-sbt sbt 1.8.2  (this may take some time)...
+2566.04.04 11:06:56 INFO  time: code lens generation in 6.08s
+2566.04.04 11:07:15 ERROR [info] [launcher] getting Scala 2.12.17 (for sbt)...
+2566.04.04 11:07:17 INFO  [info] welcome to sbt 1.8.2 (Oracle Corporation Java 17.0.1)
+2566.04.04 11:07:21 INFO  [info] loading settings for project hello-world-build-build from metals.sbt ...
+2566.04.04 11:07:22 INFO  [info] loading project definition from D:\Code\CU\Prog_Lang_Prin\hello-world\project\project
+2566.04.04 11:07:28 INFO  [info] loading settings for project hello-world-build from metals.sbt ...
+2566.04.04 11:07:28 INFO  [info] loading project definition from D:\Code\CU\Prog_Lang_Prin\hello-world\project
+2566.04.04 11:07:37 INFO  [success] Generated .bloop\hello-world-build.json
+2566.04.04 11:07:37 INFO  [success] Total time: 9 s, completed 4 เม.ย. 2566 11:07:38
+2566.04.04 11:07:40 INFO  [info] loading settings for project hello-world from build.sbt ...
+2566.04.04 11:07:40 INFO  [info] set current project to hello-world (in build file:/D:/Code/CU/Prog_Lang_Prin/hello-world/)
+2566.04.04 11:07:46 INFO  [success] Generated .bloop\hello-world-test.json
+2566.04.04 11:07:46 INFO  [success] Generated .bloop\hello-world.json
+2566.04.04 11:07:46 INFO  [success] Total time: 6 s, completed 4 เม.ย. 2566 11:07:46
+2566.04.04 11:07:46 INFO  time: ran 'sbt bloopInstall' in 51s
+2566.04.04 11:07:46 INFO  Attempting to connect to the build server...
+2566.04.04 11:07:46 INFO  Setting up current java home C:\Program Files\Java\jdk-17.0.1 in C:\Users\bossy\.bloop\bloop.json
+2566.04.04 11:07:55 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\hello-world\src\main\scala\Main.scala
+2566.04.04 11:08:08 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\hello-world\src\main\scala\Main.scala
+2566.04.04 11:08:12 INFO  Shutting down server
+2566.04.04 11:08:12 INFO  shutting down Metals
+2566.04.04 11:08:12 INFO  Exiting server

@@ -1,0 +1,47 @@
+2566.04.04 11:01:53 INFO  Started: Metals version 0.11.11 in workspace 'D:\Code\CU' for client Visual Studio Code 1.70.0.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/bossy/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2566.04.04 11:01:54 INFO  time: initialize in 0.88s
+2566.04.04 11:01:56 WARN  Build server is not auto-connectable.
+2566.04.04 11:01:56 WARN  no build tool detected in workspace 'D:\Code\CU'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2566.04.04 11:01:56 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\test.scala
+2566.04.04 11:02:12 INFO  no build target found for D:\Code\CU\Prog_Lang_Prin\test.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2566.04.04 11:02:14 INFO  time: code lens generation in 14s
+2566.04.04 11:02:14 INFO  time: code lens generation in 7.51s
+2566.04.04 11:02:29 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\test.scala
+2566.04.04 11:02:31 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\test.scala
+2566.04.04 11:02:52 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\test.scala
+เม.ย. 04, 2023 11:03:08 ก่อนเที่ยง org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 62
+เม.ย. 04, 2023 11:03:08 ก่อนเที่ยง org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 63
+2566.04.04 11:03:16 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\test.scala
+2566.04.04 11:04:06 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\lecture01_commonfeatures\Function.scala
+2566.04.04 11:04:14 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\lecture01_commonfeatures\ForLoop.scala
+2566.04.04 11:04:15 WARN  no build target for: D:\Code\CU\Prog_Lang_Prin\lecture01_commonfeatures\ForLoop.scala
+2566.04.04 11:04:53 WARN  no build tool detected in workspace 'D:\Code\CU'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2566.04.04 11:04:54 WARN  no build tool detected in workspace 'D:\Code\CU'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2566.04.04 11:05:48 INFO  
+2566.04.04 11:05:48 INFO  Template applied in D:\Code\CU\Prog_Lang_Prin\.\hello-world
+2566.04.04 11:05:48 INFO  
+2566.04.04 11:05:49 INFO  time: ran 'giter8.Giter8' in 4.97s
+2566.04.04 11:08:32 INFO  Shutting down server
+2566.04.04 11:08:32 INFO  shutting down Metals
+2566.04.04 11:08:32 INFO  Exiting server
+2566.04.04 12:53:03 INFO  Started: Metals version 0.11.11 in workspace 'D:\Code\CU' for client Visual Studio Code 1.70.0.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/bossy/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2566.04.04 12:53:03 INFO  time: initialize in 0.85s
+2566.04.04 12:53:06 INFO  Shutting down server
+2566.04.04 12:53:06 INFO  shutting down Metals
+2566.04.04 12:53:06 WARN  Build server is not auto-connectable.
+2566.04.04 12:53:06 WARN  no build tool detected in workspace 'D:\Code\CU'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2566.04.04 12:53:06 INFO  Exiting server
