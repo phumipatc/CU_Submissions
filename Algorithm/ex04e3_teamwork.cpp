@@ -1,8 +1,8 @@
 /*
-	Task	: a64_q4_path_sum
+	Task	: ex04e3_teamwork
 	Author	: Phumipat C. [MAGCARI]
 	Language: C++
-	Created	: 29 April 2023 [19:44]
+	Created	: 29 April 2023 [12:08]
 */
 #include<bits/stdc++.h>
 #define rep(i, a, b) for(int i = a; i <= (b); ++i)
@@ -21,46 +21,25 @@ using PII = pair<int ,int >;
 using PLL = pair<long long ,long long >;
 const int dir4[2][4] = {{1,-1,0,0},{0,0,1,-1}};
 const int dir8[2][8] = {{-1,-1,-1,0,1,1,1,0},{-1,0,1,1,-1,0,1,-1}};
-int K[10];
-int target;
-vector<PII > g[25];
-bool able,mark[25];
-void walk(int now,int sum=0){
-	if(sum == target){
-		able = true;
-		return ;
-	}
-	for(auto x:g[now]){
-		if(mark[x.first])			continue;
-		if(sum+x.second > target)	continue;
-		mark[x.first] = true;
-		walk(x.first,sum+x.second);
-		mark[x.first] = false;
-	}
-}
+
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
 	cin.exceptions(cin.failbit);
 	// freopen("d:/Code/CU/input.in","r",stdin);
 	int n,m;
 	cin >> n >> m;
-	rep(i,1,8)
-		cin >> K[i];
-	rep(i,1,m){
-		int u,v,w;
-		cin >> u >> v >> w;
-		g[u].push_back({v,w});
-		g[v].push_back({u,w});
+	vector<int > t(m);
+	for(auto &x:t)
+		cin >> x;
+	sort(all(t));
+	int now = 0;
+	double all = 0;
+	vector<int > sum(n,0);
+	for(auto x:t){
+		sum[now]+=x;
+		all+=sum[now];
+		now++,now%=n;
 	}
-	rep(i,1,8){
-		able = false;
-		target = K[i];
-		rep(j,0,n-1){
-			mark[j] = true;
-			walk(j);
-			mark[j] = false;
-		}
-		cout << (able?"YES\n":"NO\n");
-	}
+	cout << decp(3) << (double )all/m << '\n';	
 	return 0;
 }

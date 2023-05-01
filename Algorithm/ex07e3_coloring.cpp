@@ -2,10 +2,9 @@
 	Task	: ex07e3_coloring
 	Author	: Phumipat C. [MAGCARI]
 	Language: C++
-	Created	: 12 April 2023 [20:36]
+	Created	: 29 April 2023 [19:20]
 */
-#include<iostream>
-#include<vector>
+#include<bits/stdc++.h>
 #define rep(i, a, b) for(int i = a; i <= (b); ++i)
 #define repr(i, a, b) for(int i = a; i >= (b); --i)
 #define repl(i, a, b) for(LL i = a; i <= (b); ++i)
@@ -23,48 +22,43 @@ using PLL = pair<long long ,long long >;
 const int dir4[2][4] = {{1,-1,0,0},{0,0,1,-1}};
 const int dir8[2][8] = {{-1,-1,-1,0,1,1,1,0},{-1,0,1,1,-1,0,1,-1}};
 const int N = 55;
-vector<int > g[N];
-int c[N];
-int n,ans = N;
-bool valid(int now,int col){
-	for(auto x:g[now]){
-		if(c[x] == col)	return false;
-	}
+bool edge[N][N];
+int col[N];
+int n,ans = 1e9;
+bool valid(int v){
+	rep(i,0,n-1)
+		if(edge[v][i] && col[v] == col[i])
+			return false;
 	return true;
 }
-void paint(int now){
+void paint(int now=0){
 	if(now == n){
-		int cnt = 1;
+		int mx = 0;
 		rep(i,0,n-1)
-			cnt = max(cnt,c[i]);
-		ans = min(ans,cnt);
+			mx = max(mx,col[i]);
+		ans = min(ans,mx);
 		return ;
 	}
-	int mx = 0;
-	for(auto x:g[now])
-		mx = max(mx,c[x]);
-	vector<bool > forbid(mx+1,false);
-	for(auto x:g[now])
-		forbid[c[x]] = true;
 	rep(i,1,n){
-		if(i > ans)	break;
-		if(forbid[i])	continue;
-		c[now] = i;
-		paint(now+1);
+		if(i > ans)	return ;
+		col[now] = i;
+		if(valid(now))
+			paint(now+1);
+		col[now] = 0;
 	}
 }
 int main(){
 	cin.tie(0)->sync_with_stdio(0);
 	cin.exceptions(cin.failbit);
 	// freopen("d:/Code/CU/input.in","r",stdin);
-	int m;
-	cin >> n >> m;
-	rep(i,1,m){
+	int e;
+	cin >> n >> e;
+	rep(i,1,e){
 		int u,v;
 		cin >> u >> v;
-		g[max(u,v)].push_back(min(u,v));
+		edge[u][v] = edge[v][u] = true;
 	}
-	paint(0);
+	paint();
 	cout << ans << '\n';
 	return 0;
 }

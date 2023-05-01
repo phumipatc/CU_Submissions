@@ -1,11 +1,20 @@
 package main
 
 object question08 {
-  var tranposeList: List[List[Any]]
-  def transpose(lists:List[List[Int]]):Unit = {
-    
+  def max(list1:List[Int], list2: List[Int] ): List[Int] = {
+    if(list1.isEmpty)
+      return list2
+    if(list2.isEmpty)
+      return list1
+    if(list1.head > list2.head)
+      return list1.head::max(list1.tail, list2.tail)
+    else
+      return list2.head::max(list1.tail, list2.tail)
   }
   def maxAll(lists:List[List[Int]]) :List[Int] = {
+    if(lists.isEmpty)
+      return List()
+    max(lists.head, maxAll(lists.tail))
 
   }
   def main(Args:Array[String]):Unit = {
