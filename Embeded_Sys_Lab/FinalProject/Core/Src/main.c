@@ -21,7 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "ds18b20.h"
+#include "onewire.h"
+#include "ssd1306.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,6 +44,12 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
+I2C_HandleTypeDef hi2c1;
+
+TIM_HandleTypeDef htim1;
+TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
+
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
@@ -53,15 +61,63 @@ UART_HandleTypeDef huart2;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
-static void MX_USART1_UART_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_TIM2_Init(void);
+static void MX_USART1_UART_Init(void);
+static void MX_TIM1_Init(void);
+static void MX_I2C1_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+int workingInProgress = 0,dataPrepared = 0,currentPositionOfBuffer = 0;
+int pressedButton = 0;
+uint8_t buffer[20],receivedData[10];
+ADC_ChannelConfTypeDef sConfig = {0};
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
+//	HAL_UART_Transmit(&huart2, "Interrupted\n\r", 13, 100);
+	if(htim->Instance == TIM3){
+		if(!dataPrepared)
+			return ;
+		// Display the counter values via UART
+		if(currentPositionOfBuffer == 12){
+			HAL_UART_Transmit(&huart2, "\n\r", 2, 100);
+			dataPrepared = 0;
+			workingInProgress = 0;
+			return ;
+		}
+		HAL_UART_Transmit(&huart1, &buffer[currentPositionOfBuffer], 1, 10);
+		HAL_UART_Transmit(&huart2, &buffer[currentPositionOfBuffer], 1, 10);
+		currentPositionOfBuffer++;
+	}else if(htim->Instance == TIM2){
+		pressedButton = 1;
+		HAL_UART_Transmit(&huart2, "Sending...\n\r", 12, 100);
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	workingInProgress = 0;
+	HAL_UART_Receive_IT(&huart1, receivedData, 1);
+}
+
+float tempRead(){
+	DS18B20_ReadAll();
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 1);
+	DS18B20_StartAll();
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
+	uint8_t ROM_tmp[8];
+	uint8_t i;
+	float temperature;
+	for(i=0;i<DS18B20_Quantity();i++){
+		if(DS18B20_GetTemperature(i, &temperature)){
+			return temperature;
+		}
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -93,28 +149,74 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
-  MX_USART1_UART_Init();
   MX_ADC1_Init();
+  MX_TIM2_Init();
+  MX_USART1_UART_Init();
+  MX_TIM1_Init();
+  MX_I2C1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_UART_Receive_IT(&huart1, receivedData, 1);
+
+  DS18B20_Init(DS18B20_Resolution_12bits);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, 0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  ADC_ChannelConfTypeDef sConfig = {0};
+
+  ssd1306_init();
+
+  ssd1306_write_string(font11x18, "");
+  ssd1306_enter();
+  ssd1306_write_string(font11x18, "Hello World");
+  ssd1306_enter();
+
+
+  ssd1306_update_screen();
+
   sConfig.Channel = ADC_CHANNEL_0;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   int pressing = 0;
+  HAL_UART_Transmit(&huart2, "Initialize successful\n\r", 23, HAL_MAX_DELAY);
   while (1)
   {
-	 int pressedButton = !HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
-	 if(!pressing && pressedButton){
+//	 int pressedButton = !HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_13);
+	 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, !workingInProgress);
+	 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, workingInProgress);
+	 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, workingInProgress);
+
+	 if(pressedButton && !pressing && !workingInProgress){
+		 pressedButton = 0;
 		 pressing = 1;
-		 uint8_t buffer[15];
+		 workingInProgress = 1;
+		 dataPrepared = 0;
+		 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+		 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);
+		 HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+
+		 ssd1306_black_screen();
+		 ssd1306_set_cursor(0, 0);
+		 ssd1306_write_string(font11x18, "");
+		 ssd1306_enter();
+		 ssd1306_write_string(font11x18, "Working...");
+		 ssd1306_update_screen();
+
+		 // get Value from thermo Sensor
+		 int thermoAv = 0;
+		 float thermoSum = 0;
+		 for(int i=1;i<=100;i++){
+			 thermoSum+=tempRead();
+		 }
+		 thermoAv = thermoSum/10;
 
 		 // get Value from TDS Sensor
 		 int TDSav = 0;
 		 sConfig.Channel = ADC_CHANNEL_0;
+
 		 for(int i=1;i<=100;i++){
 			 HAL_ADC_ConfigChannel(&hadc1, &sConfig);
 			 HAL_ADC_Start(&hadc1);
@@ -124,54 +226,46 @@ int main(void)
 				TDSav+=adcValue;
 			 }
 		 }
-		 TDSav/=100;
+		 TDSav = TDSav/100;
+		 float averageVoltage = (TDSav * 5.0) / 1024;
+		 float compensationCoefficient=1.0+0.02*(thermoAv-25.0);    //temperature compensation formula: fFinalResult(25^C) = fFinalResult(current)/(1.0+0.02*(fTP-25.0));
+		 float compensationVolatge=averageVoltage/compensationCoefficient;  //temperature compensation
+		 int tdsValue = (133.42*compensationVolatge*compensationVolatge*compensationVolatge - 255.86*compensationVolatge*compensationVolatge + 857.39*compensationVolatge)*0.5; //convert voltage value to tds value
+		 if(tdsValue > 999)
+			 tdsValue = 999;
 
-		 // get Value from thermo Sensor
-		 int thermoAv = 0;
-		 sConfig.Channel = ADC_CHANNEL_1;
-		 for(int i=1;i<=100;i++){
-			 HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-			 HAL_ADC_Start(&hadc1);
-			 int adcValue;
-			 if(HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK){
-				adcValue = HAL_ADC_GetValue(&hadc1);
-				thermoAv+=adcValue;
-			 }
-		 }
-		 thermoAv/=100;
-
-		 // get Value from O2 Sensor
-		 int O2av = 0;
-//		 sConfig.Channel = ADC_CHANNEL_2;
-//		 for(int i=1;i<=100;i++){
-//			 HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-//			 HAL_ADC_Start(&hadc1);
-//			 int adcValue;
-//			 if(HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK){
-//				adcValue = HAL_ADC_GetValue(&hadc1);
-//				O2av+=adcValue;
-//			 }
-//		 }
-//		 O2av/=100;
+		 // get Value from Water Sensor
+		 int O2av = HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_10) | 1;
 
 		 // Convert Int to String
-		 sprintf(buffer, "%04d", TDSav);
+		 sprintf(buffer, "%04d", tdsValue);
 		 sprintf(buffer+4, "%04d", thermoAv);
-		 HAL_UART_Transmit(&huart2, buffer+4, 4, 100);
 		 sprintf(buffer+8, "%04d", O2av);
 		 buffer[0] = 'A';
 		 buffer[4] = 'B';
 		 buffer[8] = 'C';
+		 buffer[12] = '\0';
 
-		 //send data to NodeMCU
-		 for(int i=0;i<12;i++){
-			 HAL_UART_Transmit(&huart1, &buffer[i], 1, 100);
-			 HAL_UART_Transmit(&huart2, &buffer[i], 1, 100);
-			 HAL_Delay(1);
-		 }
-//		 HAL_UART_Transmit(&huart2, itoa(av, buffer, 10), 4, 100);
-		 HAL_UART_Transmit(&huart2, "\n\r", 2, 100);
-	 }else if(pressing && !pressedButton){
+		 currentPositionOfBuffer = 0;
+		 dataPrepared = 1;
+
+		 ssd1306_black_screen();
+		 ssd1306_set_cursor(0, 0);
+		 char scrBuffer[15];
+		 sprintf(scrBuffer, "TDS: %dppm",tdsValue);
+		 ssd1306_write_string(font11x18, scrBuffer);
+		 ssd1306_enter();
+		 sprintf(scrBuffer, "Temp: %d C",thermoAv/10);
+		 ssd1306_write_string(font11x18, scrBuffer);
+//		 ssd1306_enter();
+//		 if(O2av)
+//			 sprintf(scrBuffer, "Water: YES");
+//		 else
+//			 sprintf(scrBuffer, "Water: NO");
+//		 ssd1306_write_string(font11x18, scrBuffer);
+		 ssd1306_enter();
+		 ssd1306_update_screen();
+	 }else if(!pressedButton && pressing){
 		 pressing = 0;
 	 }
     /* USER CODE END WHILE */
@@ -296,6 +390,176 @@ static void MX_ADC1_Init(void)
 }
 
 /**
+  * @brief I2C1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2C1_Init(void)
+{
+
+  /* USER CODE BEGIN I2C1_Init 0 */
+
+  /* USER CODE END I2C1_Init 0 */
+
+  /* USER CODE BEGIN I2C1_Init 1 */
+
+  /* USER CODE END I2C1_Init 1 */
+  hi2c1.Instance = I2C1;
+  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c1.Init.OwnAddress1 = 2;
+  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c1.Init.OwnAddress2 = 0;
+  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2C1_Init 2 */
+
+  /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief TIM1 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM1_Init(void)
+{
+
+  /* USER CODE BEGIN TIM1_Init 0 */
+
+  /* USER CODE END TIM1_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM1_Init 1 */
+
+  /* USER CODE END TIM1_Init 1 */
+  htim1.Instance = TIM1;
+  htim1.Init.Prescaler = 63;
+  htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim1.Init.Period = 65535;
+  htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim1.Init.RepetitionCounter = 0;
+  htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM1_Init 2 */
+
+  /* USER CODE END TIM1_Init 2 */
+
+}
+
+/**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 100;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 10000000;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 1000;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 10000;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+
+}
+
+/**
   * @brief USART1 Initialization Function
   * @param None
   * @retval None
@@ -379,7 +643,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LD2_Pin|GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_11, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
@@ -387,12 +654,25 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : LD2_Pin */
-  GPIO_InitStruct.Pin = LD2_Pin;
+  /*Configure GPIO pins : LD2_Pin PA6 PA7 */
+  GPIO_InitStruct.Pin = LD2_Pin|GPIO_PIN_6|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PC10 */
+  GPIO_InitStruct.Pin = GPIO_PIN_10;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PC11 */
+  GPIO_InitStruct.Pin = GPIO_PIN_11;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);

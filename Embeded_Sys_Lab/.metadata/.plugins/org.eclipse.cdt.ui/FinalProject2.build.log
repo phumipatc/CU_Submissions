@@ -1,0 +1,111 @@
+15:01:31 **** Incremental Build of configuration Debug for project FinalProject2 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:124:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  124 |   sprintf(buffer, "%04d", TDSav);
+      |   ^~~~~~~
+../Core/Src/main.c:124:3: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:124:11: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  124 |   sprintf(buffer, "%04d", TDSav);
+      |           ^~~~~~
+      |           |
+      |           uint8_t * {aka unsigned char *}
+../Core/Src/main.c:124:11: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:125:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  125 |   sprintf(buffer+4, "%04d", thermoAv);
+      |           ~~~~~~^~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:125:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c:126:17: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+  126 |   sprintf(buffer+8, "%04d", O2av);
+      |           ~~~~~~^~
+      |                 |
+      |                 uint8_t * {aka unsigned char *}
+../Core/Src/main.c:126:17: note: expected 'char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+../Core/Src/main.c: In function 'HAL_TIM_PeriodElapsedCallback':
+../Core/Src/main.c:150:31: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  150 |    HAL_UART_Transmit(&huart2, "\n\r", 2, 100);
+      |                               ^~~~~~
+      |                               |
+      |                               char *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:166:5: warning: 'main' is normally a non-static function [-Wmain]
+  166 | int main(void)
+      |     ^~~~
+../Core/Src/main.c:260:13: error: invalid storage class for function 'MX_ADC1_Init'
+  260 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:312:13: error: invalid storage class for function 'MX_TIM2_Init'
+  312 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:357:13: error: invalid storage class for function 'MX_USART1_UART_Init'
+  357 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:390:13: error: invalid storage class for function 'MX_USART2_UART_Init'
+  390 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:423:13: error: invalid storage class for function 'MX_GPIO_Init'
+  423 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:472:1: error: expected declaration or statement at end of input
+  472 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:56:13: warning: 'MX_GPIO_Init' used but never defined
+   56 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:57:13: warning: 'MX_USART2_UART_Init' used but never defined
+   57 | static void MX_USART2_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:58:13: warning: 'MX_ADC1_Init' used but never defined
+   58 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:59:13: warning: 'MX_TIM2_Init' used but never defined
+   59 | static void MX_TIM2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:60:13: warning: 'MX_USART1_UART_Init' used but never defined
+   60 | static void MX_USART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:463:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  463 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:423:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  423 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:390:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  390 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:357:13: warning: 'MX_USART1_UART_Init' defined but not used [-Wunused-function]
+  357 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:312:13: warning: 'MX_TIM2_Init' defined but not used [-Wunused-function]
+  312 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:260:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  260 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:213:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  213 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:166:5: warning: 'main' defined but not used [-Wunused-function]
+  166 | int main(void)
+      |     ^~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:01:32 Build Failed. 8 errors, 20 warnings. (took 551ms)
+
