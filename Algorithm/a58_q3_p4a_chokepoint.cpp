@@ -35,16 +35,15 @@ void dfs(int u,int p){
 		sum+=subtree[x];
 	}
 	subtree[u]+=sum;
-	// (u, parent)
-	dp[u] += (n-sum-1);
+	// (u, all)
+	dp[u] += (n-1);
 	// (child, parent)
 	dp[u] += (sum * (n-sum-1));
 	for(auto x:g[u]){
+		if(x == p)	continue;
 		sum-=subtree[x];
 		// (child1, child2)
 		dp[u]+=subtree[x] * sum;
-		// (u,child)
-		dp[u]+=subtree[x];
 	}
 }
 int main(){
