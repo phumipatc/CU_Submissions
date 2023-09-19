@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Tue Sep 19 10:34:08 2023
+| Date         : Tue Sep 19 12:59:33 2023
 | Host         : PHUMIPAT-C running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file StackDisplayer_control_sets_placed.rpt
 | Design       : StackDisplayer
@@ -73,8 +73,8 @@ Table of Contents
 +------------------+----------------------+------------------+------------------+----------------+--------------+
 |   Clock Signal   |     Enable Signal    | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------+----------------------+------------------+------------------+----------------+--------------+
-|  clock_IBUF_BUFG | st/pushSP/q_reg_0[0] | st/pushSP/SR[0]  |                8 |              8 |         1.00 |
 |  clock_IBUF_BUFG | st/pushSP/E[0]       |                  |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | st/pushSP/q_reg_0[0] | st/pushSP/SR[0]  |                8 |              8 |         1.00 |
 |  clock_IBUF_BUFG | st/resetSP/E[0]      | st/pushSP/SR[0]  |                3 |              8 |         2.67 |
 |  cd/CLK          |                      |                  |                3 |             10 |         3.33 |
 |  clock_IBUF_BUFG | st/writeEN           |                  |                8 |             32 |         4.00 |

@@ -73,6 +73,7 @@ OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.maxThreads 8
 set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
+set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a35tcpg236-1
 
@@ -84,6 +85,8 @@ set_property parent.project_path D:/Code/CU/HW_Syn_Lab/Lab04/Lab04.xpr [current_
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
+set_property ip_repo_paths d:/Code/CU/HW_Syn_Lab/Lab04/Lab04.srcs/sources_1/new [current_project]
+update_ip_catalog
 set_property ip_output_repo d:/Code/CU/HW_Syn_Lab/Lab04/Lab04.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }

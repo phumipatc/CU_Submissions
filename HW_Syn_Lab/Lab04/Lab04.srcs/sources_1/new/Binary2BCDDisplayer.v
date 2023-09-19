@@ -32,7 +32,7 @@ module Binary2BCDDisplayer(
     reg [1:0] counter;
     HEXtoSevenSegmentEncoder ss(seg,HEX);
     // Binary2BCD(inp,sw,clock);
-    ROM #(8,5,"initROM.mem")DataROM(inp, sw, clock);
+    ROMM #(8,5,"initROM.mem")DataROM(inp, sw, clock);
     ClockDivider cd(clk, clock);
     
     always @(posedge clk) begin

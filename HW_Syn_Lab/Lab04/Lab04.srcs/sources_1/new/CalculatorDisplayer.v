@@ -36,7 +36,7 @@ module CalculatorDisplayer(
     reg [1:0] counter;
     reg [9:0] address;
     SpecialHEXtoSevenSegmentEncoder ss(seg,HEX);
-    ROM #(16,10,"calROM.mem")DataROM(inp, address, clock);
+    ROMM #(16,10,"calROM.mem")DataROM(inp, address, clock);
     ClockDivider cd(clk, clock);
     
     initial address <= 0;

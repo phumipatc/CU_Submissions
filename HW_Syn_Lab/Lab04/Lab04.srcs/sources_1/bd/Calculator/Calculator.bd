@@ -1,0 +1,174 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x9DFA3CED43666E86",
+      "device": "xc7a35tcpg236-1",
+      "gen_directory": "../../../../Lab04.gen/sources_1/bd/Calculator",
+      "name": "Calculator",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2023.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "CalculatorDisplayer_0": ""
+    },
+    "ports": {
+      "sw": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "btnU": {
+        "direction": "I"
+      },
+      "btnL": {
+        "direction": "I"
+      },
+      "btnD": {
+        "direction": "I"
+      },
+      "btnR": {
+        "direction": "I"
+      },
+      "clock": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Calculator_clock_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
+          }
+        }
+      },
+      "seg": {
+        "direction": "O",
+        "left": "6",
+        "right": "0"
+      },
+      "an": {
+        "direction": "O",
+        "left": "3",
+        "right": "0"
+      }
+    },
+    "components": {
+      "CalculatorDisplayer_0": {
+        "vlnv": "xilinx.com:module_ref:CalculatorDisplayer:1.0",
+        "xci_name": "Calculator_CalculatorDisplayer_0_0",
+        "xci_path": "ip\\Calculator_CalculatorDisplayer_0_0\\Calculator_CalculatorDisplayer_0_0.xci",
+        "inst_hier_path": "CalculatorDisplayer_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CalculatorDisplayer",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "seg": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "an": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "sw": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "btnU": {
+            "direction": "I"
+          },
+          "btnL": {
+            "direction": "I"
+          },
+          "btnD": {
+            "direction": "I"
+          },
+          "btnR": {
+            "direction": "I"
+          },
+          "clock": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Calculator_clock_0",
+                "value_src": "default_prop"
+              }
+            }
+          }
+        }
+      }
+    },
+    "nets": {
+      "CalculatorDisplayer_0_an": {
+        "ports": [
+          "CalculatorDisplayer_0/an",
+          "an"
+        ]
+      },
+      "CalculatorDisplayer_0_seg": {
+        "ports": [
+          "CalculatorDisplayer_0/seg",
+          "seg"
+        ]
+      },
+      "btnD_0_1": {
+        "ports": [
+          "btnD",
+          "CalculatorDisplayer_0/btnD"
+        ]
+      },
+      "btnL_0_1": {
+        "ports": [
+          "btnL",
+          "CalculatorDisplayer_0/btnL"
+        ]
+      },
+      "btnR_0_1": {
+        "ports": [
+          "btnR",
+          "CalculatorDisplayer_0/btnR"
+        ]
+      },
+      "btnU_0_1": {
+        "ports": [
+          "btnU",
+          "CalculatorDisplayer_0/btnU"
+        ]
+      },
+      "clock_0_1": {
+        "ports": [
+          "clock",
+          "CalculatorDisplayer_0/clock"
+        ]
+      },
+      "sw_0_1": {
+        "ports": [
+          "sw",
+          "CalculatorDisplayer_0/sw"
+        ]
+      }
+    }
+  }
+}

@@ -115,6 +115,7 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {HDL-1065} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -135,6 +136,8 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir D:/Code/CU/HW_Syn_Lab/Lab04/Lab04.cache/wt [current_project]
   set_property parent.project_path D:/Code/CU/HW_Syn_Lab/Lab04/Lab04.xpr [current_project]
+  set_property ip_repo_paths D:/Code/CU/HW_Syn_Lab/Lab04/Lab04.srcs/sources_1/new [current_project]
+  update_ip_catalog
   set_property ip_output_repo D:/Code/CU/HW_Syn_Lab/Lab04/Lab04.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }

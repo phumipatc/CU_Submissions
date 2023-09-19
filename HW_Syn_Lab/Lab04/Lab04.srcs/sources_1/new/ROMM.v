@@ -5,7 +5,7 @@
 // 
 // Create Date: 09/15/2023 06:17:21 PM
 // Design Name: 
-// Module Name: ROM
+// Module Name: ROMM
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,11 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module ROM
+module ROMM
 #(
-    parameter RAM_WIDTH = 8,
-    parameter RAM_ADDR_BITS = 5,
-    parameter INITFILE = ""
+    parameter RAM_WIDTH = 16,
+    parameter RAM_ADDR_BITS = 10,
+    parameter INITFILE = "calROM.mem"
 )
 (
     output reg [RAM_WIDTH-1:0] outData,

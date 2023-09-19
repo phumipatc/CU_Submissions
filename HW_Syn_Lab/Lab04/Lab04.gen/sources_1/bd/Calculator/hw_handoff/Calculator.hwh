@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Sep 19 12:53:56 2023" VIVADOVERSION="2023.1">
+
+  <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:basys3:part0:1.1" DEVICE="7a35t" NAME="Calculator" PACKAGE="cpg236" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" LEFT="7" NAME="sw" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="sw"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="btnU" SIGIS="undef" SIGNAME="External_Ports_btnU">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="btnU"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="btnL" SIGIS="undef" SIGNAME="External_Ports_btnL">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="btnL"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="btnD" SIGIS="undef" SIGNAME="External_Ports_btnD">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="btnD"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="btnR" SIGIS="undef" SIGNAME="External_Ports_btnR">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="btnR"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clock" SIGIS="clk" SIGNAME="External_Ports_clock">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="clock"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="6" NAME="seg" RIGHT="0" SIGIS="undef" SIGNAME="CalculatorDisplayer_0_seg">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="seg"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="3" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="CalculatorDisplayer_0_an">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="CalculatorDisplayer_0" PORT="an"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/CalculatorDisplayer_0" HWVERSION="1.0" INSTANCE="CalculatorDisplayer_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CalculatorDisplayer" VLNV="xilinx.com:module_ref:CalculatorDisplayer:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="Calculator_CalculatorDisplayer_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="6" NAME="seg" RIGHT="0" SIGIS="undef" SIGNAME="CalculatorDisplayer_0_seg">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="seg"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="CalculatorDisplayer_0_an">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="an"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="sw" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_sw">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="sw"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="btnU" SIGIS="undef" SIGNAME="External_Ports_btnU">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="btnU"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="btnL" SIGIS="undef" SIGNAME="External_Ports_btnL">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="btnL"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="btnD" SIGIS="undef" SIGNAME="External_Ports_btnD">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="btnD"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="btnR" SIGIS="undef" SIGNAME="External_Ports_btnR">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="btnR"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clock" SIGIS="clk" SIGNAME="External_Ports_clock">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clock"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>
