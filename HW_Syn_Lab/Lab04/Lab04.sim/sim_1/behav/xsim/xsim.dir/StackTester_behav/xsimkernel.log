@@ -1,0 +1,7 @@
+Running: xsim.dir/StackTester_behav/xsimk.exe -simmode gui -wdb StackTester_behav.wdb -simrunnum 0 -socket 53122
+Design successfully loaded
+Design Loading Memory Usage: 7880 KB (Peak: 7880 KB)
+Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 8552 KB (Peak: 8552 KB)
+Simulation CPU Usage: 15 ms
