@@ -29,7 +29,7 @@ module Debouncer(
     genvar i;
     assign inSignal[0] = D;
     generate for(i=0;i<2;i=i+1) begin
-        DFlipflop df(inSignal[i+1],clock,1,inSignal[i]);
+        DFlipFlop df(inSignal[i+1],clock,1,inSignal[i]);
     end endgenerate
     reg [19:0] counter;
     initial begin
