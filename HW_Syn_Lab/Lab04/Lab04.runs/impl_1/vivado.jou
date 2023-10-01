@@ -11,3 +11,4 @@
 # Journal file: D:/Code/CU/HW_Syn_Lab/Lab04/Lab04.runs/impl_1\vivado.jou
 # Running On: PHUMIPAT-C, OS: Windows, CPU Frequency: 3194 MHz, CPU Physical cores: 16, Host memory: 16487 MB
 #-----------------------------------------------------------
+source StackDisplayer.tcl -notrace
