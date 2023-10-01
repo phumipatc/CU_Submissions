@@ -1,26 +1,24 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/01/2023 07:32:15 PM
-// Design Name: 
-// Module Name: rom
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+//-------------------------------------------------------
+// File name    : rom.v
+// Title        : Program Memory
+// Library      : nanoLADA
+// Purpose      : Computer Architecture
+// Developers   : Krerk Piromsopa, Ph. D.
+//              : Chulalongkorn University.
+module rom(data,address);
+parameter DATA_WIDTH=32;
+parameter ADDR_WIDTH=27;
 
+output	[DATA_WIDTH-1:0]	data;
+input	[ADDR_WIDTH-1:0]	address;
 
-module rom(
+reg	[DATA_WIDTH-1:0]	mem[0:1<<ADDR_WIDTH -1];
 
-    );
+assign data=mem[address];
+
+initial begin
+	$readmemb("prog.list",mem);
+end
+
 endmodule
