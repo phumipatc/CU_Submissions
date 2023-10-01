@@ -35,6 +35,12 @@ input z_flag;
 localparam ORI=6'b010000;
 localparam ORUI=6'b010001;
 localparam ADD=6'b000001;
+localparam SUB=6'b111111;
+localparam AND=6'b111111;
+localparam OR=6'b111111;
+localparam XOR=6'b111111;
+localparam COM=6'b111111;
+localparam NOT=6'b111111;
 localparam LW=6'b011000;
 localparam SW=6'b011100;
 localparam BEQ=6'b100100;
@@ -127,9 +133,16 @@ end
 always @(opcode)
 begin
 	case (opcode)
-		ORI : alu_ops=2'b01;
-		ORUI : alu_ops=2'b01;
-		BEQ : alu_ops=2'b10;
+		ORI : alu_ops=3'b001;
+		ORUI : alu_ops=3'b001;
+		BEQ : alu_ops=3'b010;
+		ADD: alu_ops=3'b000;
+		SUB: alu_ops=3'b001;
+		OR: alu_ops=3'b010;
+		AND: alu_ops=3'b011;
+		XOR: alu_ops=3'b100;
+		COM: alu_ops=3'b101;
+		NOT: alu_ops=3'b110;
 		default : alu_ops=2'b00;
 	endcase
 end
