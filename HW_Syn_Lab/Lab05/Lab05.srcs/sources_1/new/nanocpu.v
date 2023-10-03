@@ -91,7 +91,7 @@ mux2_1		#(.WIDTH(5)) MUXRW(rw,rd,rt,sel_wr);
 regfile		REGFILE(A, B, data_selected, rs, rt, rw, ~reg_wr, clock);
 mux2_1		MUXDATA(data_selected,data_S,data_M,sel_data);
 mux2_1		MUXB(B_selected,B,imm_ext,sel_b);
-alu		ALU(data_S,z_new,c_new,A,B_selected,c_flag,alu_ops);
+alu         ALU(data_S,z_new,c_new,A,B_selected,c_flag,alu_ops);
 
 control	CONTROLUNIT(
 	sel_pc,
@@ -104,6 +104,7 @@ control	CONTROLUNIT(
 	ext_ops,
 	alu_ops,
 	opcode,
+	reserved[2:0],
 	z_new
 	);
 

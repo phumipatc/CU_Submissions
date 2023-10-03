@@ -17,7 +17,7 @@ input [2:0] alu_ops;
 
 assign z=~|S;
 
-always @(A or B or alu_ops)
+always @(A or B or Cin or alu_ops)
 begin
 	case (alu_ops)
 	3'b001: {Cout,S}=A-B;

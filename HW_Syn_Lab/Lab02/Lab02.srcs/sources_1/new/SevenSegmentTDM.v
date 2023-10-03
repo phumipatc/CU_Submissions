@@ -30,13 +30,16 @@ module SevenSegmentTDM(
         input clock
     );
     wire clk;
-    wire [15:0] inp;
+    reg [15:0] inp;
     reg [3:0] HEX;
     reg [1:0] counter;
     HEXtoSevenSegmentEncoder ss(seg,HEX);
-    Stack st(inp,sw,btnU,btnC,btnD,clock);
     ClockDivider cd(clk, clock);
     
+    initial begin
+        inp = 16'b0001001000110100;
+    end
+
     always @(posedge clk) begin
         case (counter[1:0])
             2'b00 : begin

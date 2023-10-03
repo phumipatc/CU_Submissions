@@ -8,7 +8,7 @@
 //              : Chulalongkorn University.
 module memory(data,address,wr,clock);
 parameter DATA_WIDTH=32;
-parameter ADDR_WIDTH=27;
+parameter ADDR_WIDTH=16;
 
 inout	[DATA_WIDTH-1:0]	data;
 input	[ADDR_WIDTH-1:0]	address;
