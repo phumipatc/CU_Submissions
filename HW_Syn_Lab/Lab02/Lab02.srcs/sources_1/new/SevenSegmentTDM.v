@@ -40,14 +40,19 @@ module SevenSegmentTDM(
         inpDp = 4'b1111;
     end
 
-    always @(posedge clk) begin
-        if(counter2[26] == 0) begin
+    /*always @(posedge clock) begin
+        if(counter2 == 100000000) begin
             inp = 16'b0000000100000010;
             inpDp = 4'b1010;
+            counter2 = 0;
         end else begin
             inp = 16'b0010000000000011;
             inpDp = 4'b1110;
         end
+        counter2 <= counter2+1;
+    end*/
+
+    always @(posedge clk) begin
         case (counter[1:0])
             2'b00 : begin
                 HEX <= inp[3:0];
@@ -71,6 +76,5 @@ module SevenSegmentTDM(
             end
         endcase
         counter <= counter+1;
-        counter2 <= counter2+1;
     end
 endmodule
