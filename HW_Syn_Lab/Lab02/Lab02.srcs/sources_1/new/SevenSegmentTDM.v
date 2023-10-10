@@ -30,7 +30,7 @@ module SevenSegmentTDM(
     reg [15:0] inp;
     reg [3:0] HEX;
     reg [1:0] counter;
-    reg [26:0] counter2;
+    reg [27:0] counter2;
     reg [3:0] inpDp;
     HEXtoSevenSegmentEncoder ss(seg,HEX);
     ClockDivider cd(clk, clock);
@@ -40,17 +40,19 @@ module SevenSegmentTDM(
         inpDp = 4'b1111;
     end
 
-    /*always @(posedge clock) begin
-        if(counter2 == 100000000) begin
-            inp = 16'b0000000100000010;
+    always @(posedge clock) begin
+        if(counter2 <= 100000000) begin
+            inp = 16'b0001100100000010;
             inpDp = 4'b1010;
-            counter2 = 0;
         end else begin
             inp = 16'b0010000000000011;
             inpDp = 4'b1110;
+            if(counter2 == 200000000) begin
+                counter2 = 0;
+            end
         end
         counter2 <= counter2+1;
-    end*/
+    end
 
     always @(posedge clk) begin
         case (counter[1:0])
