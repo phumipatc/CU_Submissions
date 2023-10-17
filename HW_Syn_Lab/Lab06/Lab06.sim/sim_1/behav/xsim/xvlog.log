@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Code/CU/HW_Syn_Lab/Lab06/Lab06.srcs/sources_1/new/uart_tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Code/CU/HW_Syn_Lab/Lab06/Lab06.srcs/sim_1/new/Test_Tx.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Test_Tx
