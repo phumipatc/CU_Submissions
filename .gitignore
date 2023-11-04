@@ -14,3 +14,9 @@ _*
 PROG_METH
 COMP_ENG_ESS
 AI-summer-2023
+
+jngen.h
+testlib.h
+
+vaccine-book-app/*
+massage-shop/*

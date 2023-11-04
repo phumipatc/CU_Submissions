@@ -1,0 +1,3 @@
+db.product.updateOne({product_name: "Sofabed"}, {$set:{product_price: 5400.00}})
+
+db.product.find()

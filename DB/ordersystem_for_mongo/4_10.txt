@@ -1,0 +1,1 @@
+db.product.find({product_color: "White Ash"}, {_id:0, product_id: 1, product_name: 1, product_color: 1})

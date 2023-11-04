@@ -1,0 +1,1 @@
+db.orders_w_lines.find({customer_id:10001}, {_id:0})

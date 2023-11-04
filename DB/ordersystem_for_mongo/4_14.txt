@@ -1,0 +1,8 @@
+db.product.insertOne({
+	product_id: 8,
+	product_name: "table",
+	product_color: "Red Oak",
+	product_price: 550.00
+})
+
+db.product.find()

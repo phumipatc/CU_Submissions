@@ -1,0 +1,33 @@
+db.customer.aggregate([
+	{
+		$lookup:
+		{
+			from: "orders_w_lines",
+			localField: "customer_id",
+			foreignField: "customer_id",
+			as: "order"
+		}
+	},
+	{
+		$project:
+		{
+			customer_id: 1,
+			customer_name: 1,
+			total_order: {$size: "$order"}
+		}
+	},
+	{
+		$match:
+		{
+			total_order: 0
+		}
+	},
+	{
+		$project:
+		{
+			_id: 0,
+			customer_id: 1,
+			customer_name: 1
+		}
+	}
+])

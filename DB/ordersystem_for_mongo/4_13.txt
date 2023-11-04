@@ -1,0 +1,37 @@
+db.orders_w_lines.aggregate([
+	{
+		$match:
+		{
+			order_id: 3
+		}
+	},
+	{
+		$unwind: "$order_lines"
+	},
+	{
+		$lookup:
+		{
+			from: "product",
+			localField: "order_lines.product_id",
+			foreignField: "product_id",
+			as: "product"
+		}
+	},
+	{
+		$unwind: "$product"
+	},
+	{
+		$project:
+		{
+			order_id: 1,
+			cost: {$multiply: ["$product.product_price", "$order_lines.ordered_quantity"]}
+		}
+	},
+	{
+		$group:
+		{
+			_id: "$order_id",
+			total_payment: {$sum: "$cost"}
+		}
+	}
+])
