@@ -415,7 +415,7 @@ ON A.branch_name = B.branch_name;
 ORDERSYSTEM (Exercise)
 ================================
 
-ALTER DATABASE ordersystem3 CHARACTER SET utf8 COLLATE utf8_general_ci;
+ALTER DATABASE ordersystem CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 # We need to define ENUM type separately in postgreSQL
 CREATE TYPE colors AS ENUM('Cherry', 'Natural Ash', 'White Ash', 'Red Oak', 'Natural Oak', 'Walnut');
@@ -451,13 +451,13 @@ CREATE TABLE ORDER_LINE(
     CONSTRAINT ORDER_LINE_FK2 FOREIGN KEY (PRODUCT_ID) REFERENCES PRODUCT(PRODUCT_ID));
 
 
-\copy customer FROM '/Users/duangdaowichadakul/Desktop/2110322_DBSYS_2566_1/ordersystem/customer.csv' DELIMITER ',' CSV;
+\copy customer FROM '/home/ordersystem/customer.csv' DELIMITER ',' CSV;
 
-\copy product FROM '/Users/duangdaowichadakul/Desktop/2110322_DBSYS_2566_1/ordersystem/product.csv' DELIMITER ',' CSV;
+\copy product FROM '/home/ordersystem/product.csv' DELIMITER ',' CSV;
 
-\copy ordert FROM '/Users/duangdaowichadakul/Desktop/2110322_DBSYS_2566_1/ordersystem/order.csv' DELIMITER ',' CSV;
+\copy ordert FROM '/home/ordersystem/order.csv' DELIMITER ',' CSV;
 
-\copy order_line FROM '/Users/duangdaowichadakul/Desktop/2110322_DBSYS_2566_1/ordersystem/order_line.csv' DELIMITER ',' CSV;
+\copy order_line FROM '/home/ordersystem/order_line.csv' DELIMITER ',' CSV;
 
 #========== Ignore the following lines just for testing some integrity ============
 INSERT INTO customer (CUSTOMER_ID, CUSTOMER_NAME, CUSTOMER_ADDRESS, CITY, POSTAL_CODE) VALUES ('10001', 'จอน', 'ปทุมวัน','กรุงเทพ', '10330');
