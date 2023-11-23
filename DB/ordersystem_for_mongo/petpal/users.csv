@@ -1,0 +1,6 @@
+email,address_id,password,phone_number,name,gender,image
+user1@gmail.com,1,password1,0811111111,user1,male,p1
+user2@gmail.com,2,password2,0822222222,user2,female,p2
+user3@gmail.com,3,password3,0833333333,user3,female,p3
+user4@gmail.com,4,password4,0844444444,user4,male,p4
+user5@gmail.com,5,password5,0855555555,user5,male,p5

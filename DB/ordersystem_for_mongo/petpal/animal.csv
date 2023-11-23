@@ -1,0 +1,7 @@
+animal_id,seller_email,age,price,is_sold,description,weight,sex,species,type,behaviour,media
+a1,user1@gmail.com,1,200,TRUE,d1,10,male,Golden,Dog,Nice,m1
+a2,user2@gmail.com,2,100,TRUE,d2,20,male,Siamese,Cat,Jumpy,m2
+a3,user1@gmail.com,3,150,TRUE,d3,30,female,White,Whale,Swimmer,m3
+a4,user2@gmail.com,4,100,TRUE,d4,40,male,Brown,Raccoon,Climber,m4
+a5,user4@gmail.com,5,1000,FALSE,d5,50,female,Piranha,Fish,Eater,m5
+a6,user4@gmail.com,6,20000,FALSE,d6,60,female,Rare,King Kong,Destroyer,m6

@@ -1,0 +1,5 @@
+transaction_id,buyer_email,seller_email,animal_id,timestamp,amount,payment_method
+t1,user1@gmail.com,user3@gmail.com,a1,16/1/2023,200,Visa
+t2,user2@gmail.com,user3@gmail.com,a2,16/1/2023,100,Master Card
+t3,user1@gmail.com,user5@gmail.com,a3,16/1/2023,150,Bank
+t4,user2@gmail.com,user3@gmail.com,a4,16/1/2023,100,Visa
