@@ -1,3 +1,5 @@
+.gitignore
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -18,5 +20,6 @@ AI-summer-2023
 jngen.h
 testlib.h
 
-vaccine-book-app/*
-massage-shop/*
+SW_DEV_PRAC_*
+
+tempCodeRunnerFile*
